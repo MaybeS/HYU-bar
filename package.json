@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Hanyang utility client for macOS",
   "dependencies": {
+    "jsdom": "^11.10.0",
     "menubar": "^5.2.3"
   },
   "devDependencies": {
