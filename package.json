@@ -1,0 +1,17 @@
+{
+  "name": "HYU-bar",
+  "version": "0.0.1",
+  "description": "Hanyang utility client for macOS",
+  "dependencies": {
+    "menubar": "^5.2.3"
+  },
+  "devDependencies": {
+    "electron": "^1.8.6",
+    "electron-packager": "^12.0.1"
+  },
+  "main": "main.js",
+  "scripts": {
+    "build": "electron-packager . HYU-bar --platform=darwin --arch=x64 --version=1.8.6 --icon=icon.icns",
+    "start": "electron ."
+  }
+}
