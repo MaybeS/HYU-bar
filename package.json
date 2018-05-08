@@ -1,7 +1,7 @@
 {
   "name": "HYU-bar",
   "version": "0.0.1",
-  "description": "Hanyang utility client for macOS",
+  "description": "Hanyang utility client",
   "dependencies": {
     "jsdom": "^11.10.0",
     "menubar": "^5.2.3"
