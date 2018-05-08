@@ -1,18 +1,24 @@
 const {ipcRenderer} = require('electron');
 
 const bLogin = window.document.getElementById('btn-login');
+
+var user = {};
+
 bLogin.onclick = function() {
-  const id = window.document.getElementById('id').value;
-  const pw = window.document.getElementById('password').value;
-  ipcRenderer.send('login', id, pw);
-  ipcRenderer.once('sign', (e, success) => {
-    if (success == 'success') {
-      ipcRenderer.send('get', 'classes');
-      ipcRenderer.once('response', (e, result) => {
-        alert('get success');
-      });
-    } else {
-      alert('login failed');
-    }
-  });
+  ipcRenderer.send('login',
+                    window.document.getElementById('id').value, 
+                    window.document.getElementById('password').value);
 }
+
+ipcRenderer.on('sign', (e, success, res) => {
+  if (!success) alert('Login failed\n' + res);
+  else {
+    alert('Login!')
+    user = res;
+    ipcRenderer.send('get', 'classes'); 
+  }
+});
+
+ipcRenderer.on('response', (e, result) => {
+  alert('get success');
+});
