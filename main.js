@@ -15,10 +15,10 @@ menu.on('ready', function ready() {});
 
 ipcMain.on('login', (e, id, pw) => {
   apis.login(id, pw).then(res => {
-      e.sender.send('sign', res);
-    }).catch(err => {
-      e.sender.send('sign', false)
-    });
+    e.sender.send('sign', res);
+  }).catch(err => {
+    e.sender.send('sign', false)
+  });
 });
 
 ipcMain.on('get', (e, t) => {
