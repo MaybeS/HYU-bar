@@ -15,17 +15,9 @@ menu.on('ready', function ready() {});
 
 ipcMain.on('login', (e, id, pw) => {
   apis.login(id, pw).then(res => {
-    e.sender.send('sign', res);
+    e.sender.send('sign', true, res);
   }).catch(err => {
-    e.sender.send('sign', false)
-  });
-});
-
-ipcMain.on('get', (e, t) => {
-  apis.get(t).then(res => {
-    e.sender.send('response', res);
-  }).catch(err => {
-    e.sender.send('response', false)
+    e.sender.send('sign', false, err)
   });
 });
 
