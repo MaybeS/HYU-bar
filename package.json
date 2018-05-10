@@ -2,12 +2,11 @@
   "name": "HYU-bar",
   "version": "0.0.1",
   "description": "Hanyang utility client",
-  "license": "LGPL-3.0-or-later",
+  "license": "MIT",
   "repository": "https://github.com/maybes/HYU-bar",
   "dependencies": {
     "jsdom": "^11.10.0",
-    "menubar": "^5.2.3",
-    "vue": "^2.5.16"
+    "menubar": "^5.2.3"
   },
   "devDependencies": {
     "electron": "^1.8.6",
@@ -16,6 +15,7 @@
   "main": "main.js",
   "scripts": {
     "build": "electron-packager . HYU-bar --platform=darwin --arch=x64 --version=1.8.6 --icon=icon.icns",
-    "start": "electron ."
+    "start": "electron .",
+    "dev": "electron . dev"
   }
 }
